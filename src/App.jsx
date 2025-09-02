@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "./components/ProductCard";
 import Filters from "./components/Filters";
 import { sortProducts } from "./utilities/sortProducts";
+import { filterProducts } from "./utilities/filterProducts";
 import styles from "./App.module.scss";
 import { productsList } from "./products";
 
@@ -20,14 +21,16 @@ export default function App() {
     //   setProducts(response.data);
     // });
     
-    setProducts(productsList); // using hardcoded products for now
+    setProducts(productsList); // Step 1: Recieve Products list
   }, []);
   
-  let sortedProducts = sortProducts(products, sortOrder); // take the incoming poducts list and sort them
+  const sortedProducts = sortProducts(products, sortOrder); // Step 2: sort products
   
-  if (showInStockOnly) { // take the incoming poducts list and remove the out of stock products if true
-    sortedProducts = sortedProducts.filter(product => product.stock_amount > 0);
-  }
+  const visibleProducts = filterProducts(sortedProducts, {  // Step 3: filter products using the external filterProducts utility
+    categoryFilter,
+    searchTerm,
+    showInStockOnly
+  });
 
   return (
     <div>
@@ -40,15 +43,9 @@ export default function App() {
         setShowInStockOnly={setShowInStockOnly}
       />
       <div className={styles.grid}>
-        {sortedProducts
-          .filter((product) => {
-            if (categoryFilter.length === 0) return true; // so it doesnt filter anything
-            return categoryFilter.includes(product.category.toLowerCase());
-          })
-          .map((product) => (
+        {visibleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
-          ))
-        }
+          ))}
       </div>
     </div>
   );
