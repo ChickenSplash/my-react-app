@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  
+  // So on very narrow viewports, cards can continue to seamlessly shrink
+  @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+  }
+}
