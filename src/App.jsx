@@ -53,24 +53,28 @@ export default function App() {
   });
 
   return (
-    <div>
-      <Filters 
-        categoryFilter={categoryFilter} 
-        setCategoryFilter={setCategoryFilter} 
-        sortOrder={sortOrder} 
-        setSortOrder={setSortOrder}
-        showInStockOnly={showInStockOnly}
-        setShowInStockOnly={setShowInStockOnly}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
-      />
-      <div className={styles.grid}>
-        {visibleProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <>
+      <div >
+        <div className={styles.controlPanel}>
+          <Filters 
+            categoryFilter={categoryFilter} 
+            setCategoryFilter={setCategoryFilter} 
+            sortOrder={sortOrder} 
+            setSortOrder={setSortOrder}
+            showInStockOnly={showInStockOnly}
+            setShowInStockOnly={setShowInStockOnly}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
+        </div>
+        <div>
+          {visibleProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
