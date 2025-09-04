@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./InStockCheckbox.module.scss";
+import styles from "./Checkbox.module.scss";
 
 export default function Checkbox({ showInStockOnly, setShowInStockOnly }) {
   return (

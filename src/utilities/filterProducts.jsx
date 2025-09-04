@@ -1,5 +1,5 @@
 // Centralized filtering logic for products
-export function filterProducts(products, { categoryFilter, searchTerm, showInStockOnly }) {
+export function filterProducts(products, { categoryFilter, searchTerm, showInStockOnly, debouncedPriceRange }) {
   let result = [...products];
 
   // Filter by in-stock status
@@ -15,6 +15,16 @@ export function filterProducts(products, { categoryFilter, searchTerm, showInSto
   // Filter by search term
   if (searchTerm.trim() !== "") {
     result = result.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }
+  
+  // Filter by price range
+  if (debouncedPriceRange.min) {
+    result = result.filter(product => product.price >= debouncedPriceRange.min)
+  }
+  
+  // Filter by price range
+  if (debouncedPriceRange.max) {
+    result = result.filter(product => product.price <= debouncedPriceRange.max)
   }
 
   return result;

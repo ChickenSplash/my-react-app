@@ -1,8 +1,10 @@
 import React from "react";
-import Checkbox from "./Checkbox";
-import InStockCheckbox from "./InStockCheckbox";
+import Checkbox from "./Checkboxes/Checkbox";
+import InStockCheckbox from "./Checkboxes/InStockCheckbox";
 import styles from "./Filters.module.scss";
 import SortDropdown from "./SortDropdown";
+import SearchInput from "./Inputs/SearchInput";
+import RangeInput from "./Inputs/RangeInput";
 
 export default function Filters({
   categoryFilter, 
@@ -10,7 +12,11 @@ export default function Filters({
   sortOrder, 
   setSortOrder, 
   showInStockOnly, 
-  setShowInStockOnly
+  setShowInStockOnly,
+  inputValue,
+  setInputValue,
+  priceRange,
+  setPriceRange,
 }) {
   return (
     <div className={styles.options}>
@@ -43,7 +49,24 @@ export default function Filters({
         showInStockOnly={showInStockOnly}
         setShowInStockOnly={setShowInStockOnly}
       />
-      <SortDropdown sortOrder={sortOrder} setSortOrder={setSortOrder}/>
+      <SortDropdown 
+        sortOrder={sortOrder} 
+        setSortOrder={setSortOrder}
+      />
+      <SearchInput
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+      />
+      <RangeInput 
+        name="min"
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+      />
+      <RangeInput
+        name="max"
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+      />
     </div>
   )
 }

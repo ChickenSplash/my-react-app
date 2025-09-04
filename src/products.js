@@ -5,7 +5,7 @@ export const productsList = [
     "category": "Home",
     "price": 29,
     "rating": 2.3,
-    "stock_amount": 338,
+    "stock_amount": 0,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -16,7 +16,7 @@ export const productsList = [
     "category": "Electronics",
     "price": 24.99,
     "rating": 3.3,
-    "stock_amount": 316,
+    "stock_amount": 0,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -27,7 +27,7 @@ export const productsList = [
     "category": "Clothing",
     "price": 97.5,
     "rating": 4.4,
-    "stock_amount": 323,
+    "stock_amount": 23,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -38,7 +38,7 @@ export const productsList = [
     "category": "Electronics",
     "price": 33,
     "rating": 1.8,
-    "stock_amount": 420,
+    "stock_amount": 0,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -49,7 +49,7 @@ export const productsList = [
     "category": "Clothing",
     "price": 80.99,
     "rating": 2.4,
-    "stock_amount": 240,
+    "stock_amount": 0,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -104,7 +104,7 @@ export const productsList = [
     "category": "Books",
     "price": 873.5,
     "rating": 2.6,
-    "stock_amount": 319,
+    "stock_amount": 19,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
@@ -115,7 +115,7 @@ export const productsList = [
     "category": "Toys",
     "price": 18.99,
     "rating": 2.7,
-    "stock_amount": 463,
+    "stock_amount": 63,
     "imageurl": null,
     "created_at": "2025-09-02T09:44:13.000000Z",
     "updated_at": "2025-09-02T09:44:13.000000Z"
