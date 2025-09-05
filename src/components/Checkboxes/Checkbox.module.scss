@@ -1,6 +1,9 @@
+@use "../../styles/_config.scss" as *;
+
 .checkboxLabel {
   display: flex;
   align-items: center;
+  white-space: nowrap;
   gap: 5px;
   cursor: pointer;
   font-size: 0.875rem;
@@ -13,7 +16,7 @@
 
   &:hover {
     background: #e7eaf0;
-    border-color: #007bff;
+    border-color: $secondary-color;
   }
 }
 

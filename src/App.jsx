@@ -54,8 +54,8 @@ export default function App() {
 
   return (
     <>
-      <div >
-        <div className={styles.controlPanel}>
+      <div className={styles.controlPanel}>
+        <div className="container">
           <Filters 
             categoryFilter={categoryFilter} 
             setCategoryFilter={setCategoryFilter} 
@@ -69,7 +69,9 @@ export default function App() {
             setPriceRange={setPriceRange}
           />
         </div>
-        <div>
+      </div>
+      <div className="container">
+        <div className={styles.productList}>
           {visibleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

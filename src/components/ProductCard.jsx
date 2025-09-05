@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./ProductCard.module.scss";
 import clsx from "clsx";
+import placeholder from "../assets/images/products-placeholder.png";
 
 export default function ProductCard({ product }) {
   return (
     <div className={styles.productCard}>
-      <img src={product.imageUrl} alt={product.name} width="100" />
+      <img src={product.imageUrl ? product.imageUrl : placeholder} alt={product.name} />
       <div>
         <div className={styles.productName}>{product.name}</div>
         <div className={styles.productPrice}>£ {product.price}</div>

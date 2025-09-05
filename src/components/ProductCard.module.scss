@@ -1,37 +1,52 @@
+@use "../styles/_config.scss" as *;
+
 .productCard {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s, background 0.2s;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid $secondary-color;
+    background: #e7eaf0;
+  }
+
+  img {
+    border-radius: 6px;
+    height: 124px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
   }
 
   .productName {
     font-size: 1.125rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
 
   .productPrice {
-    color: #007bff;
+    color: $secondary-color;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
 
   .productMeta {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: #666;
-    margin-bottom: 0.4rem;
+    margin-bottom: 7px;
   }
 
   .availability {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: bold;
 
     &.inStock {

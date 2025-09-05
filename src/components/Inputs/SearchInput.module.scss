@@ -1,9 +1,15 @@
+@use "../../styles/_config.scss" as *;
+
 .input {
     font-size: 0.875rem;
     padding: 9px 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 220px;
+    width: 100%;
     outline: none;
     transition: border 0.2s;
+
+    &:focus {
+        border-color: $secondary-color;
+    }
 }
