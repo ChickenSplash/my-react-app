@@ -7,6 +7,7 @@ import styles from "./App.module.scss";
 import { productsList } from "./products";
 
 import axios from "axios";
+import ProductList from "./components/ProductList";
 
 export default function App() {  
   const [products, setProducts] = useState([]); // products data
@@ -17,6 +18,7 @@ export default function App() {
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [debouncedPriceRange, setDebouncedPriceRange] = useState({ min: "", max: "" });
   const [showInStockOnly, setShowInStockOnly] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
@@ -39,7 +41,10 @@ export default function App() {
     //   setProducts(response.data);
     // });
     
-    setProducts(productsList); // Step 1: Recieve Products list
+    setTimeout(() => { // simulate api response time
+      setProducts(productsList); // Step 1: Recieve Products list
+      setIsLoading(false);
+    }, 500)
   }, []);
   
   const sortedProducts = sortProducts(products, sortOrder); // Step 2: sort products
@@ -71,11 +76,11 @@ export default function App() {
         </div>
       </div>
       <div className="container">
-        <div className={styles.productList}>
-          {visibleProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <ProductList 
+          products={visibleProducts}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
       </div>
     </>
   );

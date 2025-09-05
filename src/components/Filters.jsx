@@ -5,6 +5,7 @@ import styles from "./Filters.module.scss";
 import SortDropdown from "./SortDropdown";
 import SearchInput from "./Inputs/SearchInput";
 import RangeInput from "./Inputs/RangeInput";
+import ResetAllFilters from "./ResetAllFilters";
 
 export default function Filters({
   categoryFilter, 
@@ -71,6 +72,13 @@ export default function Filters({
         <SearchInput
           inputValue={inputValue}
           setInputValue={setInputValue}
+        />
+        <ResetAllFilters
+          setCategoryFilter={setCategoryFilter}
+          setSortOrder={setSortOrder}
+          setShowInStockOnly={setShowInStockOnly}
+          setInputValue={setInputValue}
+          setPriceRange={setPriceRange}
         />
       </div>
     </div>
