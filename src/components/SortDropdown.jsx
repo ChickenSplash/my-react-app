@@ -11,7 +11,7 @@ export default function SortDropdown({ sortOrder, setSortOrder }) {
       value={sortOrder}
       onChange={(e) => setSortOrder(e.target.value)}
     >
-      <option value="">Default</option>
+      <option value="">Sort By</option>
       <option value="priceLow">Price: Low to High</option>
       <option value="priceHigh">Price: High to Low</option>
       <option value="ratingLow">Rating: Low to High</option>

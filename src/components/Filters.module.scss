@@ -1,13 +1,14 @@
 @use "../styles/config" as *;
 
-.checkboxes, .secondaryOptions {
-    margin-bottom: 10px;
+.options {
+    margin-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 5px;
+}
 
-    @media (min-width: $break-point-small) {
-        justify-content: start;
-    }
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }

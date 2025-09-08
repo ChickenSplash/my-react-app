@@ -70,6 +70,7 @@ export default function App() {
             setShowInStockOnly={setShowInStockOnly}
             inputValue={inputValue}
             setInputValue={setInputValue}
+            searchTerm={searchTerm}
             priceRange={priceRange}
             setPriceRange={setPriceRange}
           />

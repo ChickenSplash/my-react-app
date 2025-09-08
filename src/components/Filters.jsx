@@ -6,6 +6,7 @@ import SortDropdown from "./SortDropdown";
 import SearchInput from "./Inputs/SearchInput";
 import RangeInput from "./Inputs/RangeInput";
 import ResetAllFilters from "./ResetAllFilters";
+import Dropdown from "./Checkboxes/Dropdown";
 
 export default function Filters({
   categoryFilter, 
@@ -16,46 +17,40 @@ export default function Filters({
   setShowInStockOnly,
   inputValue,
   setInputValue,
+  searchTerm,
   priceRange,
   setPriceRange,
 }) {
   return (
-    <div className={styles.options}>
-      <div className={styles.checkboxes}>
-        <Checkbox 
-          label="Books"
-          categoryFilter={categoryFilter} 
+    <>
+      <div className={styles.options}>
+        <Dropdown 
+          categoryFilter={categoryFilter}
           setCategoryFilter={setCategoryFilter}
-        />
-        <Checkbox 
-          label="Electronics"
-          categoryFilter={categoryFilter} 
-          setCategoryFilter={setCategoryFilter}
-        />
-        <Checkbox 
-          label="Clothing"
-          categoryFilter={categoryFilter} 
-          setCategoryFilter={setCategoryFilter}
-        />
-        <Checkbox 
-          label="Home"
-          categoryFilter={categoryFilter} 
-          setCategoryFilter={setCategoryFilter}
-        />
-        <Checkbox 
-          label="Toys"
-          categoryFilter={categoryFilter} 
-          setCategoryFilter={setCategoryFilter}
-        />
-        <InStockCheckbox
           showInStockOnly={showInStockOnly}
           setShowInStockOnly={setShowInStockOnly}
         />
-      </div>
-      <div className={styles.secondaryOptions}>
         <SortDropdown 
           sortOrder={sortOrder} 
           setSortOrder={setSortOrder}
+        />
+        <ResetAllFilters
+          setCategoryFilter={setCategoryFilter}
+          categoryFilter={categoryFilter}
+          setSortOrder={setSortOrder}
+          sortOrder={sortOrder}
+          setShowInStockOnly={setShowInStockOnly}
+          showInStockOnly={showInStockOnly}
+          setInputValue={setInputValue}
+          searchTerm={searchTerm}
+          setPriceRange={setPriceRange}
+          priceRange={priceRange}
+        />
+      </div>
+      <div className={styles.inputs}>
+        <SearchInput
+          inputValue={inputValue}
+          setInputValue={setInputValue}
         />
         <RangeInput 
           name="min"
@@ -68,19 +63,6 @@ export default function Filters({
           setPriceRange={setPriceRange}
         />
       </div>
-      <div>
-        <SearchInput
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-        />
-        <ResetAllFilters
-          setCategoryFilter={setCategoryFilter}
-          setSortOrder={setSortOrder}
-          setShowInStockOnly={setShowInStockOnly}
-          setInputValue={setInputValue}
-          setPriceRange={setPriceRange}
-        />
-      </div>
-    </div>
+    </>
   )
 }
