@@ -37,7 +37,7 @@ export default function ResetAllFilters({
       onClick={resetAll}
       className={styles.button}
     >
-      Reset All Filters
+      Reset All
     </button>
   )
 }

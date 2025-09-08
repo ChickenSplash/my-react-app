@@ -80,7 +80,6 @@ export default function App() {
         <ProductList 
           products={visibleProducts}
           isLoading={isLoading}
-          setIsLoading={setIsLoading}
         />
       </div>
     </>

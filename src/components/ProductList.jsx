@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ProductList.module.scss";
 import ProductCard from "./ProductCard";
 
-export default function ProductList({ products, isLoading, setIsLoading }) {
+export default function ProductList({ products, isLoading }) {
   if (isLoading) {
     return (
       <p className={styles.errorMessage}>Loading...</p>
