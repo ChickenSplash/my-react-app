@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./components/ProductCard";
 import Filters from "./components/Filters";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { sortProducts } from "./utilities/sortProducts";
 import { filterProducts } from "./utilities/filterProducts";
 import styles from "./App.module.scss";
@@ -20,6 +20,7 @@ export default function App() {
   const [debouncedPriceRange, setDebouncedPriceRange] = useState({ min: 0, max: 1000 });
   const [showInStockOnly, setShowInStockOnly] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); // functionality for sidebar
   
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
@@ -72,24 +73,24 @@ export default function App() {
         searchTerm={searchTerm}
         priceRange={priceRange}
         setPriceRange={setPriceRange}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
       />
-      <div className={styles.controlPanel}>
-        <div className="container">
-          <Filters 
-            categoryFilter={categoryFilter} 
-            setCategoryFilter={setCategoryFilter} 
-            sortOrder={sortOrder} 
-            setSortOrder={setSortOrder}
-            showInStockOnly={showInStockOnly}
-            setShowInStockOnly={setShowInStockOnly}
-            inputValue={inputValue}
-            setInputValue={setInputValue}
-            searchTerm={searchTerm}
-            priceRange={priceRange}
-            setPriceRange={setPriceRange}
-          />
-        </div>
-      </div>
+      <Filters 
+        categoryFilter={categoryFilter} 
+        setCategoryFilter={setCategoryFilter} 
+        sortOrder={sortOrder} 
+        setSortOrder={setSortOrder}
+        showInStockOnly={showInStockOnly}
+        setShowInStockOnly={setShowInStockOnly}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        searchTerm={searchTerm}
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <div className="container">
         <ProductList 
           products={visibleProducts}

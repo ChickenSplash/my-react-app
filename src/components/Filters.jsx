@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Filters.module.scss";
 import SortDropdown from "./SortDropdown";
 import SearchInput from "./Inputs/SearchInput";
+import Hamburger from "./Hamburger";
 
 export default function Filters({
   categoryFilter, 
@@ -15,21 +16,30 @@ export default function Filters({
   searchTerm,
   priceRange,
   setPriceRange,
+  isOpen,
+  setIsOpen
 }) {
   return (
-    <>
-      <div className={styles.options}>
-        <SortDropdown 
-          sortOrder={sortOrder} 
-          setSortOrder={setSortOrder}
-        />
+    <div className={styles.header}>
+      <div className="container">
+        <div className={styles.titleBar}>
+          <Hamburger 
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
+          <h1>Product Catalogue</h1>
+        </div>
+        <div className={styles.options}>
+          <SearchInput
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+          />
+          <SortDropdown 
+            sortOrder={sortOrder} 
+            setSortOrder={setSortOrder}
+          />
+        </div>
       </div>
-      <div className={styles.inputs}>
-        <SearchInput
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-        />
-      </div>
-    </>
+    </div>
   )
 }
