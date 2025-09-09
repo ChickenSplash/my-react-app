@@ -1,1 +1,8 @@
 @use "styles/config" as *;
+
+.mainContentWrapper {
+    @media (min-width: $break-point-medium) {
+        display: flex;
+        align-items: flex-start;
+    }
+}

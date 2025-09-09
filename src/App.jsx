@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "./components/ProductCard";
-import Filters from "./components/Filters";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
+import FilterOptions from "./components/FilterOptions";
 import { sortProducts } from "./utilities/sortProducts";
 import { filterProducts } from "./utilities/filterProducts";
 import styles from "./App.module.scss";
@@ -76,26 +76,36 @@ export default function App() {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
-      <Filters 
-        categoryFilter={categoryFilter} 
-        setCategoryFilter={setCategoryFilter} 
+      <Header 
         sortOrder={sortOrder} 
         setSortOrder={setSortOrder}
-        showInStockOnly={showInStockOnly}
-        setShowInStockOnly={setShowInStockOnly}
         inputValue={inputValue}
         setInputValue={setInputValue}
-        searchTerm={searchTerm}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
       <div className="container">
-        <ProductList 
-          products={visibleProducts}
-          isLoading={isLoading}
-        />
+        <div className={styles.mainContentWrapper}>
+          <FilterOptions
+            categoryFilter={categoryFilter} 
+            setCategoryFilter={setCategoryFilter} 
+            sortOrder={sortOrder} 
+            setSortOrder={setSortOrder}
+            showInStockOnly={showInStockOnly}
+            setShowInStockOnly={setShowInStockOnly}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+            searchTerm={searchTerm}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
+          <ProductList 
+            products={visibleProducts}
+            isLoading={isLoading}
+          />
+        </div>
       </div>
     </>
   );

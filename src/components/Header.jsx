@@ -1,21 +1,14 @@
 import React from "react";
-import styles from "./Filters.module.scss";
+import styles from "./Header.module.scss";
 import SortDropdown from "./SortDropdown";
 import SearchInput from "./Inputs/SearchInput";
-import Hamburger from "./Hamburger";
+import Hamburger from "./Sidebar/Hamburger";
 
-export default function Filters({
-  categoryFilter, 
-  setCategoryFilter, 
+export default function Header({
   sortOrder, 
   setSortOrder, 
-  showInStockOnly, 
-  setShowInStockOnly,
   inputValue,
   setInputValue,
-  searchTerm,
-  priceRange,
-  setPriceRange,
   isOpen,
   setIsOpen
 }) {

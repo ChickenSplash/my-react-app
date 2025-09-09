@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ProductList.module.scss";
 import ProductCard from "./ProductCard";
+import Sidebar from "./Sidebar/Overlay";
 
 export default function ProductList({ products, isLoading }) {
   if (isLoading) {
