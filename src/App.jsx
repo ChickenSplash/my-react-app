@@ -15,7 +15,7 @@ export default function App() {
   const [categoryFilter, setCategoryFilter] = useState([]); // category filter
   const [inputValue, setInputValue] = useState(""); // live typing
   const [searchTerm, setSearchTerm] = useState(""); // search filter
-  const [sortOrder, setSortOrder] = useState(""); // sort products
+  const [sortOrder, setSortOrder] = useState("nameAsc"); // sort products
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
   const [debouncedPriceRange, setDebouncedPriceRange] = useState({ min: 0, max: 1000 });
   const [showInStockOnly, setShowInStockOnly] = useState(false);

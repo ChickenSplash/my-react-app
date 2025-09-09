@@ -4,6 +4,8 @@ export function sortProducts(products, sortOrder) {
     if (sortOrder === "priceHigh") return b.price - a.price;
     if (sortOrder === "ratingLow") return a.rating - b.rating;
     if (sortOrder === "ratingHigh") return b.rating - a.rating;
+    if (sortOrder === "nameAsc") return a.name.localeCompare(b.name);
+    if (sortOrder === "nameDesc") return b.name.localeCompare(a.name);
     return 0; // no sorting
   });
 }

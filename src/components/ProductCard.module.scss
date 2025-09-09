@@ -15,7 +15,7 @@
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid $primary-color;
-    background: #e7eaf0;
+    background: $secondary-color;
   }
 
   img {
@@ -54,7 +54,7 @@
     }
 
     &.outStock {
-      color: red;
+      color: $warning-color;
     }
   }
 }

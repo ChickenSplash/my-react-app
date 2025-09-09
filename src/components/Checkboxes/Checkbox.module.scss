@@ -12,13 +12,12 @@
   margin-top: 5px;
   padding: 9px 10px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid $secondary-color;
   transition: border 0.2s, background 0.2s;
 
 
   &:hover {
-    background: #e7eaf0;
-    border-color: $secondary-color;
+    background: $primary-color;
   }
 }
 
@@ -35,11 +34,5 @@
 }
 
 .checked {
-  background-color: rgb(103, 219, 103);
-  border: 1px solid green;
-
-  &:hover {
-    background: rgb(83, 182, 83);
-    border: 1px solid green;
-  }
+  background-color: $tertiary-color;
 }

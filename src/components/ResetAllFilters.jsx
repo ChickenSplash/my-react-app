@@ -16,7 +16,7 @@ export default function ResetAllFilters({
 }) {
   function resetAll() {
     setCategoryFilter([]);
-    setSortOrder("");
+    setSortOrder("nameAsc");
     setShowInStockOnly(false);
     setInputValue("");
     setPriceRange({ min: 0, max: 1000 });

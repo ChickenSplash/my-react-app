@@ -11,11 +11,12 @@ export default function SortDropdown({ sortOrder, setSortOrder }) {
       value={sortOrder}
       onChange={(e) => setSortOrder(e.target.value)}
     >
-      <option value="">Sort By</option>
-      <option value="priceLow">Price: Low to High</option>
-      <option value="priceHigh">Price: High to Low</option>
-      <option value="ratingLow">Rating: Low to High</option>
-      <option value="ratingHigh">Rating: High to Low</option>
+      <option value="nameAsc">Sort Alphabetically: A → Z</option>
+      <option value="nameDesc">Sort Alphabetically: Z → A</option>
+      <option value="priceLow">Sort by Price: Low → High</option>
+      <option value="priceHigh">Sort by Price: High → Low</option>
+      <option value="ratingLow">Sort by Rating: Low → High</option>
+      <option value="ratingHigh">Sort by Rating: High → Low</option>
     </select>
   );
 }

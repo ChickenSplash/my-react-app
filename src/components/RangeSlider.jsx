@@ -19,20 +19,19 @@ export default function PriceSlider({
   return (
     <div>
       <h3 className={styles.heading}>Price Range</h3>
-      <div>
-        <RangeInput 
-          priceRange={priceRange}
-          setPriceRange={setPriceRange}
+      <RangeInput 
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+      />
+      <div className={styles.rangeSlider}>
+        <Slider
+          range
+          min={0}
+          max={1000}
+          value={[priceRange.min, priceRange.max]}
+          onChange={handleChange}
         />
       </div>
-      <Slider
-        className={styles.rangeSlider}
-        range
-        min={0}
-        max={1000}
-        value={[priceRange.min, priceRange.max]}
-        onChange={handleChange}
-      />
     </div>
   );
 }
