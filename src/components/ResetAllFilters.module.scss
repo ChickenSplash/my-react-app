@@ -1,9 +1,13 @@
 @use "../styles/config" as *;
 
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     font-size: 0.875rem;
     padding: 9px 12px;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #fff;
     cursor: pointer;
@@ -13,4 +17,17 @@
         border-color: $secondary-color;
         background-color: #e7eaf0;
     }
+}
+
+.buttonDisabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 0.875rem;
+    padding: 9px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: rgba(0,0,0,0.5)
 }

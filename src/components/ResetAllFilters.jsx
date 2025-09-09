@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ResetAllFilters.module.scss"
+import clsx from "clsx";
 
 export default function ResetAllFilters({ 
   setCategoryFilter,
@@ -18,24 +19,21 @@ export default function ResetAllFilters({
     setSortOrder("");
     setShowInStockOnly(false);
     setInputValue("");
-    setPriceRange({ min: "", max: "" });
+    setPriceRange({ min: 0, max: 1000 });
   }
 
-  if (
-    categoryFilter.length === 0
-    && sortOrder === ""
-    && showInStockOnly === false
-    && searchTerm === ""
-    && priceRange.min === ""
-    && priceRange.max === ""
-  ) {
-    return null
-  }
+  const isDefaultState =
+    categoryFilter.length === 0 &&
+    sortOrder === "" &&
+    showInStockOnly === false &&
+    searchTerm === "" &&
+    priceRange.min === 0 &&
+    priceRange.max === 1000;
 
   return (
     <button 
       onClick={resetAll}
-      className={styles.button}
+      className={isDefaultState ? styles.buttonDisabled : styles.button}
     >
       Reset All
     </button>

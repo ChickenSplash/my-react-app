@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
+    "rc-slider": "^11.1.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "sass": "^1.91.0"

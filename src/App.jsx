@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./components/ProductCard";
 import Filters from "./components/Filters";
+import Sidebar from "./components/Sidebar";
 import { sortProducts } from "./utilities/sortProducts";
 import { filterProducts } from "./utilities/filterProducts";
 import styles from "./App.module.scss";
@@ -15,8 +16,8 @@ export default function App() {
   const [inputValue, setInputValue] = useState(""); // live typing
   const [searchTerm, setSearchTerm] = useState(""); // search filter
   const [sortOrder, setSortOrder] = useState(""); // sort products
-  const [priceRange, setPriceRange] = useState({ min: "", max: "" });
-  const [debouncedPriceRange, setDebouncedPriceRange] = useState({ min: "", max: "" });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
+  const [debouncedPriceRange, setDebouncedPriceRange] = useState({ min: 0, max: 1000 });
   const [showInStockOnly, setShowInStockOnly] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -59,6 +60,19 @@ export default function App() {
 
   return (
     <>
+      <Sidebar 
+        categoryFilter={categoryFilter} 
+        setCategoryFilter={setCategoryFilter} 
+        sortOrder={sortOrder} 
+        setSortOrder={setSortOrder}
+        showInStockOnly={showInStockOnly}
+        setShowInStockOnly={setShowInStockOnly}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        searchTerm={searchTerm}
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+      />
       <div className={styles.controlPanel}>
         <div className="container">
           <Filters 
