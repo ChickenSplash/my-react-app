@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom"; // for matchers like toBeInTheDocument
 import Checkbox from "./Checkbox";
 
-test("renders checkbox with label text", () => {
+test("Renders checkbox with label text", () => {
   const label = "Book";
   const categoryFilter = [];
   const setCategoryFilter = vi.fn();

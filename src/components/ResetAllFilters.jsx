@@ -33,6 +33,7 @@ export default function ResetAllFilters({
   return (
     <button 
       onClick={resetAll}
+      data-testid="reset-button"
       className={isDefaultState ? styles.buttonDisabled : styles.button}
     >
       Reset All
