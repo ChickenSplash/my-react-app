@@ -9,6 +9,7 @@ import { productsList } from "./products";
 
 import axios from "axios";
 import ProductList from "./components/ProductList";
+import Footer from "./components/Footer";
 
 export default function App() {  
   const [products, setProducts] = useState([]); // products data
@@ -61,51 +62,56 @@ export default function App() {
 
   return (
     <>
-      <Sidebar 
-        categoryFilter={categoryFilter} 
-        setCategoryFilter={setCategoryFilter} 
-        sortOrder={sortOrder} 
-        setSortOrder={setSortOrder}
-        showInStockOnly={showInStockOnly}
-        setShowInStockOnly={setShowInStockOnly}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        searchTerm={searchTerm}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
-      <Header 
-        sortOrder={sortOrder} 
-        setSortOrder={setSortOrder}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
-      <div className="container">
-        <div className={styles.mainContentWrapper}>
-          <FilterOptions
-            categoryFilter={categoryFilter} 
-            setCategoryFilter={setCategoryFilter} 
-            sortOrder={sortOrder} 
-            setSortOrder={setSortOrder}
-            showInStockOnly={showInStockOnly}
-            setShowInStockOnly={setShowInStockOnly}
-            inputValue={inputValue}
-            setInputValue={setInputValue}
-            searchTerm={searchTerm}
-            priceRange={priceRange}
-            setPriceRange={setPriceRange}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-          />
-          <ProductList 
-            products={visibleProducts}
-            isLoading={isLoading}
-          />
+      <div className={styles.layout}>
+        <Sidebar 
+          categoryFilter={categoryFilter} 
+          setCategoryFilter={setCategoryFilter} 
+          sortOrder={sortOrder} 
+          setSortOrder={setSortOrder}
+          showInStockOnly={showInStockOnly}
+          setShowInStockOnly={setShowInStockOnly}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          searchTerm={searchTerm}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <Header 
+          sortOrder={sortOrder} 
+          setSortOrder={setSortOrder}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <div className={styles.main}>
+          <div className="container">
+            <div className={styles.mainContentWrapper}>
+              <FilterOptions
+                categoryFilter={categoryFilter} 
+                setCategoryFilter={setCategoryFilter} 
+                sortOrder={sortOrder} 
+                setSortOrder={setSortOrder}
+                showInStockOnly={showInStockOnly}
+                setShowInStockOnly={setShowInStockOnly}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                searchTerm={searchTerm}
+                priceRange={priceRange}
+                setPriceRange={setPriceRange}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+              />
+              <ProductList 
+                products={visibleProducts}
+                isLoading={isLoading}
+              />
+            </div>
+          </div>
         </div>
+        <Footer />
       </div>
     </>
   );

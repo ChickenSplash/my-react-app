@@ -24,7 +24,7 @@ export default function ResetAllFilters({
 
   const isDefaultState =
     categoryFilter.length === 0 &&
-    sortOrder === "" &&
+    sortOrder === "nameAsc" &&
     showInStockOnly === false &&
     searchTerm === "" &&
     priceRange.min === 0 &&

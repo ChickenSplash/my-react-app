@@ -6,3 +6,13 @@
         align-items: flex-start;
     }
 }
+
+.layout {
+  min-height: 100vh;           /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;                     /* expands to fill available space */
+}
